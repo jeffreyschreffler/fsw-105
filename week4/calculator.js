@@ -2,6 +2,7 @@
 // A function that multiplies two numbers and returns the result
 // A function that divides two numbers and returns the result
 // A function that subtracts two numbers and returns the result
+
 var readlineSync = require('readline-sync');
 
 // Varibles
@@ -15,47 +16,40 @@ let usrOperationLower = usrOperation.toLowerCase();
 // additon function
 
 function addFunc(num1, num2) {
-    let addValue = num1 + num2;
-    return(addValue);
+    return(num1 + num2);
 };
 
 // subtract function 
 
 function subFunc(num1, num2) {
-    let subValue = num1 - num2;
-    return(subValue);
+    return(num1 - num2);
+ 
 };
 
 //multiply function
 
 function multFunc(num1, num2) {
-    let multValue = num1 * num2;
-    return(multValue);
+    return(num1 * num2)
 };
 
 //divison function
 
 function divFunc(num1, num2) {
-    let divValue = num1 / num2;
-    return(divValue);
+    return(num1 / num2)
 };
 
-//operation statements
+// calculator function
 
-if( usrOperationLower === "add") {
-    console.log(`The result is: ${addFunc(usrNum1, usrNum2)} `);
-        
-};
+function mycalc(num1, num2, operation) {
+    if (operation === "add") {
+        console.log("The result is: " + addFunc(num1, num2));
+    }  else if (operation === "sub") {
+        console.log("The result is: " + subFunc(num1, num2))
+    } else if (operation === "mul") {
+        console.log("The result is: " + multFunc(num1, num2))
+    } else if (operation === "div") {
+        console.log("The result is: " + divFunc(num1, num2))
+    }
+}
 
-if(usrOperationLower === "sub") {
-    console.log(`The result is: ${subFunc(usrNum1, usrNum2)}`);
-};
-
-if(usrOperationLower === "mul") {
-    console.log(`The result is: ${multFunc(usrNum1, usrNum2)}`);
-};
-
-if(usrOperationLower === "div") {
-    console.log(`The result is: ${divFunc(usrNum1, usrNum2)}`);
-};
-
+mycalc(usrNum1, usrNum2, usrOperationLower);
